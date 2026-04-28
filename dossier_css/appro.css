@@ -1,0 +1,309 @@
+/* Section */
+.appro {
+    margin-left: 18%; /* même largeur que ta navbar */
+    /* padding: 20px; */
+    width: 82%;
+    /* margin: 8px; */
+}
+
+/* Card */
+.card_add {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.74);
+    padding: 10px 10px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    /* margin: 5px 5px; */
+}
+/* Input */
+.texte {
+    width: 260px;
+    padding: 10px;
+    border-radius: 25px;
+    border: none;
+    background: #f1f5f9;
+    transition: 0.3s;
+}
+
+.texte:focus {
+    background: #e2e8f0;
+}
+
+/* Bouton */
+.addappro {
+    padding: 15px ;
+    border: none;
+    border-radius: 25px;
+    background: #3b82f6;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+/* Hover bouton */
+.addappro:hover {
+    background: #2563eb;
+    transform: translateY(-2px);
+}
+
+/* Responsive */
+@media(max-width: 768px){
+    .appro {
+        margin-left: 80px;
+    }
+
+    .card_add {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .texte {
+        width: 100%;
+    }
+
+    .addappro {
+        width: 100%;
+    }
+}
+/* Table globale */
+table {
+    width: 98.5%;
+    table-layout: fixed;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    margin-top: 20px;
+    margin: 12px 10px;
+}
+
+thead th:nth-child(1) { width: 40%; } /* Fournisseur */
+
+/* Header */
+thead {
+    background: #3b82f6;
+    color: white;
+}
+
+thead th {
+    padding: 15px;
+    text-align: left;
+    font-weight: 600;
+}
+
+/* Lignes */
+tbody tr {
+    border-bottom: 1px solid #e2e8f0;
+    transition: 0.3s;
+}
+
+/* Cellules */
+tbody td {
+    padding: 12px 15px;
+    color: #1e293b;
+}
+
+/* Hover ligne */
+tbody tr:hover {
+    background: #f1f5f9;
+}
+
+/* Dernière ligne sans bordure */
+tbody tr:last-child {
+    border-bottom: none;
+}
+
+/* Bouton action (si tu ajoutes des boutons plus tard) */
+td button {
+    padding: 6px 12px;
+    border: none;
+    border-radius: 8px;
+    background: #3b82f6;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+td button:hover {
+    background: #2563eb;
+}
+
+/* Responsive */
+@media(max-width: 768px){
+    table {
+        font-size: 12px;
+    }
+
+    thead {
+        display: none;
+    }
+
+    table, tbody, tr, td {
+        display: block;
+        width: 100%;
+    }
+
+    tr {
+        margin-bottom: 10px;
+        background: white;
+        border-radius: 10px;
+        padding: 10px;
+    }
+
+    td {
+        text-align: right;
+        position: relative;
+        padding-left: 50%;
+    }
+
+    td::before {
+        content: attr(data-label);
+        position: absolute;
+        left: 10px;
+        font-weight: bold;
+        color: #64748b;
+    }
+}
+/* RESET */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: Arial, sans-serif;
+}
+.formAppro{
+    display:block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: none;
+}   
+.formAppro .show{
+    display: block;
+}
+form{
+    background:#fff;
+    padding:25px;
+    border-radius:12px;
+    width:420px;
+    box-shadow:0 10px 25px rgba(0, 0, 0, 0.575);
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+h2{
+    text-align:center;
+    margin-bottom:20px;
+}
+
+select, input{
+    width:100%;
+    padding:10px;
+    margin-top:8px;
+    border-radius:8px;
+    border:1px solid #ccc;
+    transition:0.3s;
+}
+
+select:focus, input:focus{
+    border-color:#036179ab;
+    outline:none;
+}
+.ligne{
+    display:flex;
+    gap:10px;
+    margin-top:10px;
+}
+
+.ligne input{
+    width:100px;
+}
+
+/* BUTTON DELETE */
+.supprimer{
+    background:#ff4d4d;
+    color:white;
+    border:none;
+    padding:8px;
+    border-radius:8px;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.supprimer:hover{
+    background:#cc0000;
+}
+
+/* ADD BUTTON */
+.add-btn{
+    margin-top:10px;
+    background:#021b6e;
+    color:white;
+    border:none;
+    padding:10px;
+    width:100%;
+    border-radius:8px;
+    cursor:pointer;
+}
+
+.add-btn:hover{
+    background:#021b6e;
+}
+
+/* SUBMIT */
+.submit-btn{
+    margin-top:15px;
+    background:#010f1bd2;
+    color:white;
+    border:none;
+    padding:12px;
+    width:100%;
+    border-radius:8px;
+    cursor:pointer;
+}
+
+.submit-btn:hover{
+    background:#010f1bd2;
+}
+.supp{
+    float: right;
+      background:#ff4d4d;
+    color:white;
+    border:none;
+    padding:8px;
+    border-radius:8px;
+    cursor:pointer;
+    transition:0.3s;
+}
+.supAppro{
+    display: flex;
+    align-items: center;
+    gap:10px;
+}
+ .btn-mod {
+  background:green; 
+  padding: 5px 10px; 
+   border-radius:5px;
+  color:white;
+  text-decoration: none;
+}
+
+ .btn-annuler {
+  background:red; 
+  padding:5px 10px ; 
+   border-radius:5px;
+  color:white;
+  text-decoration: none;
+} 

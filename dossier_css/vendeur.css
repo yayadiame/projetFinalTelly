@@ -1,0 +1,289 @@
+.card-vendeur {
+    width: 81%;
+    margin-left: 250px; /* adapte si dashboard à gauche */
+    background: #f5f6fa;
+  
+}
+
+.div-listes {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #ffffff;
+    padding: 15px 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    gap: 15px;
+}
+
+/* input search */
+.texte {
+    padding: 10px 10px;
+    border: none;
+    border-radius: 15px;
+    background-color: #007bff1f;
+    transition: all 0.3s ease;
+    width: 30%;
+}
+
+.texte:focus {
+    border-color: #3498db;
+    box-shadow: 0 0 8px rgba(52, 152, 219, 0.25);
+}
+
+/* bouton add vendeur */
+.vendeurs {
+    padding: 10px 18px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: linear-gradient(135deg, #27ae60, #2ecc71);
+    color: white;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+}
+
+.vendeurs:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 18px rgba(39,174,96,0.3);
+}
+
+.vendeurs i {
+    font-size: 13px;
+}
+/* add vendeur */
+
+.add-vendeur{
+    background-color: rgba(0, 0, 0, 0.5);
+    border: 1px solid;
+    box-shadow: 4px  6px 10px rgba(0, 0, 0, 0.63);
+    color: black;
+   
+    font-size: 20px;
+    border-radius: 12px;
+    display: none;
+    position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 10;
+}
+
+.add-vendeur form{
+    background-color: white;
+    padding: 20px;
+    border-radius: 12px;
+    width: 500px;
+    height: 380px;
+    margin: auto;
+    margin-top: 100px;
+}
+
+.add-vendeur.show{
+    display: block;
+    /* background-color: rgb(206, 196, 196); */
+}
+.add-vendeur input, select{
+    width: 97%;
+    padding: 10px 8px;
+    margin-top: 10px;
+    border-radius: 10px;
+}
+.btn-add{
+    margin-top: 15px;
+    padding: 8px 8px;
+    border-radius: 12px;
+    background-color:  #001f3f;
+    color: white;
+    font-size: 18px;
+    border: none;
+    float: right;
+    margin-right: 10px;
+    cursor: pointer;
+}
+.btn-add:hover{
+    transform: scale(1.1);
+}
+.div1,.div2,.div3{
+    display: flex;
+    gap: 20px;
+}
+
+.crad-inscire h2{
+    color:  #001f3f;
+    text-transform: capitalize;
+    text-align: center;
+}
+.btnAnnuler{
+    background: red;
+    margin-top: 15px;
+    padding: 8px 8px;
+    border-radius: 12px;
+    color: white;
+    font-size: 18px;
+    margin-right: 10px;
+    cursor: pointer;
+    border: none;
+    
+}
+.btnAnnuler:hover{
+    background: rgba(255, 0, 0, 0);
+    background: red;
+}
+.btn-mod{
+    margin-top: 15px;
+    padding: 8px 18px;
+    border-radius: 8px;
+    background-color:  #001f3f;
+    color: white;
+    font-size: 14px;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-mod:hover{
+    background-color:  #00aeff59;
+    transform: scale(1.05);
+}
+
+.card_mod_sup{
+    display: flex;
+    gap: 5px;
+    padding: 10px;
+}
+.btn-annuler {
+    margin-top: 15px;
+    padding: 8px 8px;
+    border-radius: 8px;
+    background-color: #dc3545;
+    color: white;
+    font-size: 14px;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-annuler:hover{
+    background-color: #c82333;
+    transform: scale(1.05);
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+    margin-top: 20px;
+}
+
+/* header */
+.lignes th {
+    background-color:  #3498db;
+    color: white;
+    text-align: left;
+    padding: 12px;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+}
+
+/* cellules */
+td {
+    padding: 12px;
+    border-bottom: 1px solid #eee;
+    font-size: 14px;
+    color: #333;
+}
+
+/* hover ligne */
+tbody tr:hover {
+    background: #f5f6fa;
+    transition: 0.3s;
+}
+
+/* image profil */
+.profil-img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #3498db;
+}
+
+/* actions */
+.card_mod_sup {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+/* boutons modifier/supprimer */
+.btn-mod,
+.btn-annuler {
+    display: inline-flex;
+    width: 32px;
+    height: 32px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+/* modifier */
+.btn-mod {
+    background: green;
+    color: white;
+}
+
+.btn-mod:hover {
+    background: green;
+    transform: scale(1.1);
+}
+
+/* supprimer */
+.btn-annuler {
+    background: #e74c3c;
+    color: white;
+}
+
+.btn-annuler:hover {
+    background: #c0392b;
+    transform: scale(1.1);
+}
+
+/* pagination */
+.pagination {
+    margin-top: 20px;
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.page-link {
+    padding: 8px 12px;
+    border-radius: 8px;
+    text-decoration: none;
+    background: #eee;
+    color: #333;
+    transition: 0.3s;
+}
+
+.page-link:hover {
+    background: #3498db;
+    color: white;
+}
+
+.page-link.active {
+    background: #3498db;
+    color: white;
+}

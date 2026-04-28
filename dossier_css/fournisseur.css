@@ -1,0 +1,234 @@
+/* Section */
+.Fournisseur {
+    margin-left: 250px; /* aligné avec navbar */
+    padding: 20px;
+}
+
+/* Container */
+.div-fournisseur {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    background: white;
+    padding: 15px 20px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+/* Input search */
+.texte {
+    width: 300px;
+    padding: 10px 15px;
+    border-radius: 25px;
+    border: none;
+    outline: none;
+    background: #f1f5f9;
+    transition: 0.3s;
+    font-size: 14px;
+}
+
+.texte:focus {
+    background: #e2e8f0;
+    box-shadow: 0 0 0 2px #3b82f6;
+}
+
+/* Bouton add fournisseur */
+.fournisseur {
+    background: #3b82f6;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: 0.3s;
+}
+
+/* Hover bouton */
+.fournisseur:hover {
+    background: #2563eb;
+    transform: translateY(-2px);
+}
+
+/* Icône */
+.fournisseur i {
+    font-size: 14px;
+}
+
+/* Responsive */
+@media(max-width: 768px){
+    .Fournisseur {
+        margin-left: 80px;
+    }
+
+    .div-fournisseur {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 10px;
+    }
+
+    .texte {
+        width: 100%;
+    }
+
+    .fournisseur {
+        width: 100%;
+        justify-content: center;
+    }
+}
+.formfourni {
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(3, 3, 3, 0.63);
+    display: none;
+}
+.formfourni .show {
+    display: block;
+}
+.formfourni h2{
+    text-align: center;
+    color: #001f3f;
+    
+}
+.formfourni form {
+    background: white;
+    padding: 30px 22px;
+    border-radius: 15px;
+    position: relative;
+    width: 320px;
+    height: 55%;
+    box-shadow: 8px 5px 15px rgba(0, 0, 0, 0.616);
+    top: 20%;
+    left: 42%;
+}
+.formfourni input {
+    width: 94%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 2px solid #ccc;
+    background-color: #00000013;
+    border-radius: 10px;
+    border: none;
+    border-bottom: 3px solid #001f3f;
+}
+.addFourni {
+    padding: 12px;
+    background: #001f3f;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    width: 100%;
+}
+.btnAnnuler{
+     color: white;
+     float: right;
+     font-size: 20px;
+     font-weight: 900;
+     cursor: pointer;
+     background-color: red;
+     padding: 8px;
+     border-radius: 10px;
+}  
+.btnAnnuler:hover{
+    background-color: rgba(255, 0, 0, 0.89);
+    color: white;
+   transform: scale(1.1);
+   box-shadow: 5px 5px 10px rgba(255, 0, 0, 0.5);
+   
+}
+/* Table globale */
+table.lignes {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    margin-top: 20px;
+}
+
+/* Header */
+table.lignes thead {
+    background: #3b82f6;
+    color: white;
+}
+
+table.lignes th {
+    padding: 15px;
+    text-align: left;
+    font-weight: 600;
+}
+
+/* Cells */
+table.lignes td {
+    padding: 12px 15px;
+    border-bottom: 1px solid #e2e8f0;
+    color: #1e293b;
+}
+
+/* Hover row */
+table.lignes td:hover {
+    background: #f1f5f9;
+}
+
+/* Actions container */
+.btn-four {
+    display: flex;
+    gap: 10px;
+}
+
+/* Modifier */
+.btn-mode {
+    background: green;
+    color: white;
+    padding: 6px 10px;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: 0.3s;
+    font-size: 14px;
+}
+
+.btn-mode:hover {
+    background: green;
+}
+
+/* Supprimer */
+.btn-annule {
+    background: #ef4444;
+    color: white;
+    padding: 6px 10px;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: 0.3s;
+    font-size: 14px;
+}
+
+.btn-annule:hover {
+    background: #dc2626;
+}
+
+/* Responsive */
+@media(max-width: 768px){
+    table.lignes {
+        font-size: 12px;
+    }
+
+    .btn-four {
+        flex-direction: column;
+    }
+
+    .btn-mode,
+    .btn-annule {
+        text-align: center;
+    }
+}

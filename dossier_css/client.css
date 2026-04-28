@@ -1,0 +1,378 @@
+.card-client {
+    margin-left: 250px; /* même largeur que ta navbar */
+    /* padding: 20px; */
+}
+
+/* Grid */
+.div-dasbord {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+/* Card */
+.grene {
+    background: linear-gradient(135deg, #3b82f6, #6366f1);
+    color: white;
+    /* padding: 20px; */
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    transition: 0.3s;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Effet hover */
+.grene:hover {
+    transform: translateY(-5px);
+}
+
+/* Petit effet lumière */
+.grene::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: rgba(255,255,255,0.2);
+    transition: 0.5s;
+}
+
+.grene:hover::before {
+    left: 100%;
+}
+
+/* Texte */
+.grene div {
+    font-size: 14px;
+    opacity: 0.9;
+}
+
+.grene h3 {
+    font-size: 28px;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+/* Responsive */
+@media(max-width: 768px){
+    .card-client {
+        margin-left: 80px;
+    }
+} 
+
+/*  */
+/* Container */
+.listes-client {
+    padding: 20px;
+    display: flex;
+    /* align-items: center; */
+    justify-content: space-between;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    gap: 15px;
+}
+
+/* Input search */
+.texte {
+    width: 300px;
+    padding: 10px 15px;
+    border-radius: 25px;
+    border: none;
+    outline: none;
+    background: #f1f5f9;
+    transition: 0.3s;
+    font-size: 14px;
+}
+
+.texte:focus {
+    background: #e2e8f0;
+    box-shadow: 0 0 0 2px #3b82f6;
+}
+
+/* Bouton add client */
+.client {
+    background: #3b82f6;
+    color: white;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: 0.3s;
+}
+
+/* Hover bouton */
+.client:hover {
+    background: #2563eb;
+    transform: translateY(-2px);
+}
+
+/* Icône */
+.client i {
+    font-size: 14px;
+}
+
+/* Responsive */
+@media(max-width: 768px){
+    .listes-client {
+        margin-left: 80px;
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .texte {
+        width: 100%;
+    }
+
+    .client {
+        width: 100%;
+        justify-content: center;
+    }
+}
+/*  */
+.formClient {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* margin-top: 40px; */
+    display: none;
+    position: absolute;
+    background-color: #312f2f7a;
+     width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+
+
+}
+
+.formClient form {
+    width: 350px;
+    background: #0f172a;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.2);
+    display: flex;
+    flex-direction: column;
+    /* position: relative; */
+    gap: 15px;
+   position: fixed;
+    left: 40%;
+    top: 20%;
+
+}
+
+.formClient h2 {
+    text-align: center;
+    color: #0044ff;
+    margin-bottom: 10px;
+}
+
+.formClient input[type="text"],
+.formClient input[type="file"] {
+    padding: 10px;
+    border: 1px solid #022e47;
+    border-radius: 6px;
+    background: transparent;
+    color: white;
+    outline: none;
+}
+
+.formClient input::placeholder {
+    color: #aaa;
+}
+
+.formClient input:focus {
+    border-color: #00c3ff;
+    box-shadow: 0 0 5px #00f7ff;
+
+}
+
+.btn-parent {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.btn-parent button {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+/* bouton annuler */
+.btnAnnuler {
+    /* background: #1e293b; */
+    background: #334155;
+    color: #fff;
+}
+
+.btnAnnuler:hover {
+    background: #334155;
+}
+
+/* bouton ajouter */
+.addClient {
+    background: linear-gradient(to right, #0066ff);
+    color: white;
+}
+
+.addClient:hover {
+    opacity: 0.8;
+}
+
+/* message erreur */
+.formClient div {
+    font-size: 14px;
+    font-weight: bold;
+}
+.formClient.show{
+    display: block;
+}
+
+.formClient h2{
+    text-align: center; 
+    margin-bottom: 10px;
+}
+
+.formClient input{
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+
+}
+/*  *//* Table */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    margin-top: 20px;
+}
+
+/* Header */
+.lignes {
+    background: #3b82f6;
+    color: white;
+}
+
+.lignes th {
+    padding: 15px;
+    text-align: left;
+    font-weight: 600;
+}
+
+/* Corps */
+tbody td {
+    padding: 12px 15px;
+    border-bottom: 1px solid #e2e8f0;
+    color: #1e293b;
+}
+
+/* Hover ligne */
+tbody tr:hover {
+    background: #f1f5f9;
+}
+
+/* Avatar */
+.avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #3b82f6;
+}
+
+/* Actions */
+.btn-cil {
+    display: flex;
+    gap: 10px;
+}
+
+/* Bouton modifier */
+.btn-mod {
+    background: #10b981;
+    color: white;
+    padding: 6px 10px;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.btn-mod:hover {
+    background: #059669;
+}
+
+/* Bouton supprimer */
+.btn-annuler {
+    background: #ef4444;
+    color: white;
+    padding: 6px 10px;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.btn-annuler:hover {
+    background: #dc2626;
+}
+
+/* Pagination */
+.pagination {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+}
+
+/* Liens pagination */
+.page-link {
+    padding: 8px 12px;
+    background: white;
+    border-radius: 8px;
+    text-decoration: none;
+    color: #1e293b;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    transition: 0.3s;
+}
+
+/* Hover */
+.page-link:hover {
+    background: #3b82f6;
+    color: white;
+}
+
+/* Page active */
+.page-link.active {
+    background: #3b82f6;
+    color: white;
+}
+
+/* Responsive */
+@media(max-width: 768px){
+    table {
+        font-size: 12px;
+    }
+
+    .btn-cil {
+        flex-direction: column;
+    }
+
+    .avatar {
+        width: 30px;
+        height: 30px;
+    }
+}

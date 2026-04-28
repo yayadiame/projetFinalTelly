@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+body{
+    font-family: "Poppins", sans-serif;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.section1 {
+    margin-left: 250px;
+    background: #f1f5f9;
+    width: 82%;
+    box-shadow: 4px 4px 15px rgba(0,0,0,0.05);
+}
+.dasbord {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: white;
+    padding: 15px 15px;
+    /* border-radius: 15px; */
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    
+}
+.dasbord h2 {
+    color: #1e293b;
+    /* font-weight: bold; */
+}
+
+.borde {
+    padding: 10px 15px;
+    border-radius: 25px;
+    border: none;
+    outline: none;
+    background: #e2e8f0;
+    width: 250px;
+    transition: 0.3s;
+    position: sticky;
+    top: 0;
+}
+
+.borde:focus {
+    background: #cbd5f5;
+}
+
+/* Image profil */
+.card_img {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #3b82f6;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.card_img:hover {
+    transform: scale(1.1);
+}
+.section2 {
+    margin-left: 260px;
+    padding: 20px;
+}
+
+/* Exemple style si tu actives tes cards */
+.grene {
+    background: linear-gradient(135deg, #3b82f6, #6366f1);
+    color: white;
+    padding: 20px;
+    border-radius: 15px;
+    transition: 0.3s;
+}
+
+.grene:hover {
+    transform: translateY(-5px);
+}
+
+/* Responsive */
+@media(max-width: 900px){
+    .section1,
+    .section2 {
+        margin-left: 80px;
+    }
+
+    .borde {
+        width: 150px;
+    }
+
+    .dasbord h2 {
+        font-size: 10px;
+    }
+}
