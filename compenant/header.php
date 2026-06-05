@@ -84,38 +84,28 @@ $ruptures->execute();
    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
    <script>
 const data = {
-    labels: ['Lundi', 'Mardi', 'Mercredi', 'jeudi' , 'vendredi', 'samedi', 'Dimanche'],
-    datasets: [{
-        label: 'Ventes',
-        data: [12, 19, 3, 5],
-        borderWidth: 2
-    }]
+    labels: ['Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi', 'Dimanche'],
+    datasets: [
+        {
+            label: 'Ventes',
+            data: [12, 19, 3, 5, 10, 8, 15],
+            borderWidth: 2
+        }
+    ]
 };
 
-const ctx = document.getElementById('graphique').getContext('2d');
-
-new Chart(ctx, {
-    type: 'line',
-    data: data
-});
-
-const ctx2 = document.getElementById('cercle').getContext('2d');
-
-new Chart(ctx2, {
-    type: 'pie',
-    data: {
-        labels: ['client', 'produit', 'vendeur'],
-        datasets: [{
-            data: [10, 20, 30]
-        }]
-    }
-});
+const ctx = document.getElementById('graphique').getContext('2d'); 
+new Chart(ctx, { type: 'line', data: data }); 
+const ctx2 = document.getElementById('cercle').getContext('2d'); 
+new Chart(ctx2, { type: 'pie',
+ data: { labels: ['client', 'produit', 'vendeur'], datasets: [{ data: [10, 20, 30] }] } 
+ });
 </script>
 </section> 
 <section  class="section1">
     <div class="card_king">
         <div class="card_vends">
-            <h2>Top 10 Meilleures Commandes</h2>
+            <h2><i class="fa-solid fa-receipt"></i>Top 10 Meilleures Commandes</h2>
             <table>
                 <thead class="lignes">
                     <th>Rang</th>
@@ -135,7 +125,7 @@ new Chart(ctx2, {
             </table>
         </div>
         <div class="card_vends">
-            <h2>Top 10 Produits les PLUS  vendus</h2>
+            <h2><i class="fa-solid fa-cart-shopping"></i>Top 10 Produits les PLUS  vendus</h2>
             <table>
                 <thead class="lignes">
                     <th>RANG</th>
@@ -191,7 +181,7 @@ new Chart(ctx2, {
 <section class="section1">
         <div class="card_king">
         <div class="card_cmde">
-            <h2>Top 10 Meilleures Clients</h2>
+            <h2><i class="fa-solid fa-users"></i> Top 10 Meilleures Clients</h2>
             <table>
                 <thead class="lignes">
                     <th>Rang</th>
@@ -211,7 +201,7 @@ new Chart(ctx2, {
             </table>
         </div>
         <div class="card_cmde">
-            <h2>10 Derniers Commandes</h2>
+            <h2><i class="fa-solid fa-receipt"></i> 10 Derniers Commandes</h2>
             <table>
                 <thead class="lignes">
                     <th>Rang</th>

@@ -64,9 +64,9 @@ $totalPages = ceil($total / $limit);
         </div>
         <div class="listes-client">
             <input type="text" class="texte" placeholder="  🔍 filtrer par nom ........">
-             <?php if($_SESSION['user']['role'] === 'admin'): ?>
+             <?php //if($_SESSION['user']['role'] === 'admin'): ?>
             <button class="client"><i class="fa-solid fa-plus"></i>Add Client </button>
-             <?php endif; ?>
+             <?php //endif; ?>
         </div>
         <table>
             <thead class="lignes">

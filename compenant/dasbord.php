@@ -2,11 +2,11 @@
 <section class="section1">
     <!-- session1 cest la balise parent  -->
    <div class="dasbord">
-     <h2>Dasbord Admin</h2>
+     <h2>Dasbord </h2>
      <input type="search" placeholder="chercher......." class="borde">
     <!-- <h2> Diallo & Frere</h2> -->
      <div>
-        <img src="../dossier_images/avatar1773365304.jpg" alt="profil" class="card_img">
+        <img src="../dossier_images/avatar1773852740.jpg" alt="profil" class="card_img">
      </div>
    </div>
 </section>

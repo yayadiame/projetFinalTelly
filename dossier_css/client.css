@@ -120,10 +120,14 @@
 
 /* Responsive */
 @media(max-width: 768px){
+
     .listes-client {
-        margin-left: 80px;
+        margin-left: 0; /* IMPORTANT */
+        display: flex;
         flex-direction: column;
+        gap: 10px;
         align-items: stretch;
+        padding: 10px;
     }
 
     .texte {
@@ -132,6 +136,7 @@
 
     .client {
         width: 100%;
+        display: flex;
         justify-content: center;
     }
 }

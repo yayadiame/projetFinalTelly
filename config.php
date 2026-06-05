@@ -2,7 +2,7 @@
 $host="localhost";
 $user="root";
 $password="";
-$dbname="final-projet";
+$dbname="final_projettelly";
 
 try {
     $db = new PDO(

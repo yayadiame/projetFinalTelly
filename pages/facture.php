@@ -1,12 +1,28 @@
 <?php
-    session_start();
+session_start();
 include '../config.php';
 
 $id_commande = $_GET['id'];
-$sql = "SELECT date_commande FROM commande WHERE id = ?";
 
-$sql = "SELECT d.quantite, d.prix, d.sous_total, p.nom 
-        FROM detailcommande d 
+/* =========================
+   RÉCUPÉRER LE CLIENT
+========================= */
+
+$sqlClient = "SELECT c.nom, c.prenom
+              FROM commande co
+              JOIN client c ON co.id_client = c.id
+              WHERE co.id = ?";
+
+$reqClient = $db->prepare($sqlClient);
+$reqClient->execute([$id_commande]);
+
+$clientData = $reqClient->fetch(PDO::FETCH_ASSOC);
+
+$client = $clientData['nom'] . ' ' . $clientData['prenom'];
+
+/* ========================= RÉCUPÉRER LES PRODUITS ========================= */
+
+$sql = "SELECT d.quantite, d.prix, d.sous_total, p.nom  FROM detailcommande d 
         JOIN produit p ON d.id_produit = p.id 
         WHERE d.id_commande = ?";
 
@@ -15,7 +31,6 @@ $req->execute([$id_commande]);
 
 $total_general = 0;
 ?>
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -106,7 +121,7 @@ tr:hover {
                    <p>N°012900<?= $id_commande ?></p>
                    <p>date:<?= date('d/m/y') ?></p>
                    <p>Facture a:</p>
-                   <p>Nom: </p>
+                   <p>Nom : <?= htmlspecialchars($client) ?> </p>
                </div>
                <div>
                    <h2>mon etreprise</h2> 

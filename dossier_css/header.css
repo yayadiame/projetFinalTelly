@@ -118,19 +118,43 @@ body{
     justify-content: center;
 }
 
-/* Responsive */
-@media(max-width: 900px){
-    :root {
-        --nav-width: 80px;
+/* RESPONSIVE TABLEAUX */
+@media(max-width:900px){
+
+    /* Sections */
+    .section1{
+        width: 100%;
+        padding: 10px;
+        margin-left: 0;
     }
 
-    .diagramme {
-        grid-template-columns: 1fr;
+    /* Cards */
+    .card_king,
+    .card_kings{
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
     }
 
-    .filter_card {
-        width: 150px;
+    .card_vends,
+    .card_cmde,
+    .card_cmdes{
+        width: 100%;
+        overflow-x: auto;
     }
+
+    /* Tableau */
+    table{
+        width: 100%;
+        min-width: 600px;
+        border-collapse: collapse;
+    }
+
+    /* Titres */
+    h2{
+        font-size: 16px;
+    }
+
 }
 table {
     width: 100%;
@@ -181,4 +205,9 @@ tbody tr:hover {
 .card_cmde,
 .card_vends {
     width: 48%;
+}
+
+.card_cmdes h2{
+    text-align: center;
+    justify-content: center;
 }

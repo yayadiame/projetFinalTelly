@@ -1,0 +1,141 @@
+.carte_vends{
+    margin-left: 19%;
+}
+/* section principale */
+.carte_vends {
+    /* margin-left: 250px; ajuste selon ton sidebar */
+    background: #f5f7fb;
+    min-height: 100vh;
+}
+
+/* grille */
+.Card_grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 25px;
+}
+
+/* carte */
+.card1 {
+    background: white;
+    border-radius: 15px;
+    padding: 25px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+/* effet hover */
+.card1:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+}
+
+/* titre */
+.card1 div {
+    font-size: 14px;
+    color: #777;
+    margin-bottom: 10px;
+    text-transform: capitalize;
+}
+
+/* valeur */
+.card1 h3 {
+    font-size: 28px;
+    font-weight: bold;
+    color: #222;
+}
+
+/* petite barre décorative */
+.card1::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 5px;
+    top: 0;
+    left: 0;
+    background: linear-gradient(90deg, #4facfe, #00f2fe);
+}
+
+/* couleurs différentes pour chaque carte */
+.card1:nth-child(1)::before {
+    background: linear-gradient(90deg, #43e97b, #38f9d7);
+}
+
+.card1:nth-child(2)::before {
+    background: linear-gradient(90deg, #fa709a, #fee140);
+}
+
+.card1:nth-child(3)::before {
+    background: linear-gradient(90deg, #667eea, #764ba2);
+}
+
+.card1:nth-child(4)::before {
+    background: linear-gradient(90deg, #f7971e, #ffd200);
+}
+/* conteneur */
+.card_vends {
+    background: #ffffff;
+    margin: 20px 15px;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+}
+
+/* titre */
+.card_vends h2 {
+    font-size: 20px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* table */
+.card_vends table {
+    width: 100%;
+    border-collapse: collapse;
+    overflow: hidden;
+}
+
+/* entête */
+.card_vends thead {
+    background-color: #4facfe;
+    color: white;
+}
+
+.card_vends th {
+    padding: 12px;
+    text-align: center;
+    font-size: 13px;
+    letter-spacing: 1px;
+}
+
+/* lignes */
+.card_vends td {
+    padding: 12px;
+    text-align: center;
+    border-bottom: 1px solid #eee;
+    font-size: 14px;
+}
+
+/* effet zebra */
+.card_vends tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+/* badge rang top */
+.card_vends td:first-child {
+    font-weight: bold;
+}
+
+/* top 3 style spécial */
+.card_vends tr:nth-child(1) td:first-child {
+    color: gold;
+}
+
+.card_vends tr:nth-child(2) td:first-child {
+    color: silver;
+}
+
+.card_vends tr:nth-child(3) td:first-child {
+    color: #cd7f32; /* bronze */
+}

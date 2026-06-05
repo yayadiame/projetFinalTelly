@@ -17,7 +17,7 @@ if($_SERVER['REQUEST_METHOD']=="POST"){
     $db->beginTransaction();
 
     $sql = "INSERT INTO approvissionnement (id_fournisseur, status) 
-            VALUES (:id_fournisseur, 'en_cours')";
+            VALUES (:id_fournisseur, 'valide')";
 
     $query = $db->prepare($sql);
     $query->execute([

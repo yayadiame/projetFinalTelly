@@ -113,11 +113,15 @@
     width: 94%;
     padding: 10px;
     margin-bottom: 15px;
-    border: 2px solid #ccc;
+    border: 2px solid #252222;
     background-color: #00000013;
     border-radius: 10px;
     border: none;
-    border-bottom: 3px solid #001f3f;
+}
+input:focus {
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 2px #3b82f6;
+    outline: none;
 }
 .addFourni {
     padding: 12px;
@@ -217,18 +221,126 @@ table.lignes td:hover {
     background: #dc2626;
 }
 
-/* Responsive */
-@media(max-width: 768px){
-    table.lignes {
-        font-size: 12px;
+/* ================= RESPONSIVE TABLET ================= */
+@media(max-width:900px){
+
+    .Fournisseur{
+        margin-left: 90px;
+        padding: 15px;
     }
 
-    .btn-four {
+    /* Barre du haut */
+    .div-fournisseur{
         flex-direction: column;
+        align-items: stretch;
+    }
+
+    .texte{
+        width: 100%;
+    }
+
+    .fournisseur{
+        width: 100%;
+        justify-content: center;
+    }
+
+    /* TABLE */
+    table.lignes{
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+
+    /* FORMULAIRE */
+    .formfourni form{
+        width: 85%;
+        height: auto;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        padding: 20px;
+    }
+
+    .formfourni input{
+        width: 100%;
+    }
+}
+
+/* ================= MOBILE ================= */
+@media(max-width:600px){
+
+    .Fournisseur{
+        margin-left: 0;
+        padding: 10px;
+    }
+
+    .div-fournisseur{
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .texte{
+        width: 100%;
+        font-size: 13px;
+    }
+
+    .fournisseur{
+        width: 100%;
+        padding: 12px;
+        justify-content: center;
+    }
+
+    /* TABLE RESPONSIVE */
+    table.lignes{
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+        border-radius: 10px;
+    }
+
+    table.lignes th,
+    table.lignes td{
+        padding: 10px;
+        font-size: 13px;
+    }
+
+    .btn-four{
+        display: flex;
+        justify-content: center;
+        gap: 5px;
     }
 
     .btn-mode,
-    .btn-annule {
-        text-align: center;
+    .btn-annule{
+        padding: 5px 8px;
+        font-size: 12px;
+    }
+
+    /* FORMULAIRE POPUP */
+    .formfourni form{
+        width: 90%;
+        height: auto;
+        padding: 20px;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .formfourni h2{
+        font-size: 20px;
+    }
+
+    .formfourni input{
+        width: 100%;
+        padding: 12px;
+    }
+
+    .addFourni{
+        width: 100%;
+    }
+
+    .btnAnnuler{
+        font-size: 16px;
+        padding: 6px 10px;
     }
 }

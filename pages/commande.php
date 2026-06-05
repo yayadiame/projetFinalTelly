@@ -3,7 +3,7 @@ session_start();
     include "../config.php";
 
     // Récupérer toutes les commandes avec client et total
-    $sql = "SELECT c.id, c.date, c.etat, cl.nom, cl.prenom, SUM(dc.sous_total) as total
+    $sql = "SELECT c.id, c.date, c.etat, cl.nom, cl.prenom, SUM(dc.sous_total)  as total
             FROM commande c
             JOIN client cl ON c.id_client = cl.id
             LEFT JOIN detailcommande dc ON c.id = dc.id_commande
@@ -12,6 +12,29 @@ session_start();
     $query = $db->query($sql);
     $commandes = $query->fetchAll(PDO::FETCH_ASSOC);
 
+    //les commdes genre cloturee , annuleer etc ...............
+    $sqlStats = "SELECT etat, COUNT(*) as total FROM commande GROUP BY etat";
+$queryStats = $db->query($sqlStats);
+$stats = $queryStats->fetchAll(PDO::FETCH_ASSOC);
+
+$attente = 0;
+$cloturee = 0;
+$annulee = 0;
+if($_SESSION['user']['role'] === 'vendeur'){
+    foreach($stats as $srow){
+    if($srow['etat'] == "en_cours") $attente = $srow['total'];
+    if($srow['etat'] == "cloture") $cloturee = $srow['total'];
+    if($srow['etat'] == "annuler") $annulee = $srow['total'];
+}
+}
+if($_SESSION['user']['role'] === 'admin'){
+    foreach($stats as $srow){
+    if($srow['etat'] == "en_cours") $attente = $srow['total'];
+    if($srow['etat'] == "cloture") $cloturee = $srow['total'];
+    if($srow['etat'] == "annuler") $annulee = $srow['total'];
+}
+} 
+    
     // Récupérer les produits
     $sql = "SELECT id, nom, prix_vente  FROM produit";
     $query = $db->query($sql);
@@ -45,21 +68,21 @@ session_start();
                     <p><i class="fa-solid fa-clock"></i></p>
                    <p>en attente</p> 
                 </div>
-                <h3>0</h3>
+                <h3><?= $attente ?></h3>
             </div>
             <div class="div1" style="">
                 <div class="p">
                     <p><i class="fa-solid fa-check"></i></p>
                     <p>cloturée</p>
                 </div>
-                <h3>525</h3>
+                <h3><?= $cloturee ?></h3>
             </div>
             <div class="div2" style="">
                 <div class="p">
                     <p><i class="fa-solid fa-xmark"></i></p>
                     <p>Annulée</p>
                 </div>
-                <h3>0</h3>
+                <h3><?= $annulee ?></h3>
             </div>
         </div>
         <div class="listes-commande">
@@ -129,7 +152,7 @@ session_start();
                     <?php endif; ?>
 
                     <?php if($cmd['etat']=="annuler"): ?>
-                         <span class="annuler">Annulée</span>
+                         <span class="annuler" style="color:red;">Annulée</span>
                     <?php endif; ?>
                 </td>
                 </tr>

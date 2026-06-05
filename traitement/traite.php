@@ -4,6 +4,8 @@ include "../config.php";
 
 
 if($_SERVER["REQUEST_METHOD"]=="POST"){
+    //  echo "Bienvenue";
+    //         die();
     $email=$_POST["email"];
      $mot_de_passe=$_POST["mot_de_passe"];
 
@@ -48,8 +50,9 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
         }
     };
     if($faunt){
-         $_SESSION["success"] = "Connexion réussie";
+        // $_SESSION["success"] = "Connexion réussie";
         if($user["role"]==="admin"){
+           
             header("Location:../pages/accueil.php");
             exit();
         }
@@ -60,7 +63,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
     }
 
     $_SESSION["error"]="email ou mot de passe incorrect";
-    header('Location:../pages/connexion.php');
+    header('Location:../index.php');
     exit();
 }
 

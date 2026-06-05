@@ -1,309 +1,415 @@
-/* Section */
-.appro {
-    margin-left: 18%; /* même largeur que ta navbar */
-    /* padding: 20px; */
-    width: 82%;
-    /* margin: 8px; */
-}
-
-/* Card */
-.card_add {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: rgba(255, 255, 255, 0.74);
-    padding: 10px 10px;
-    border-radius: 15px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-    /* margin: 5px 5px; */
-}
-/* Input */
-.texte {
-    width: 260px;
-    padding: 10px;
-    border-radius: 25px;
-    border: none;
-    background: #f1f5f9;
-    transition: 0.3s;
-}
-
-.texte:focus {
-    background: #e2e8f0;
-}
-
-/* Bouton */
-.addappro {
-    padding: 15px ;
-    border: none;
-    border-radius: 25px;
-    background: #3b82f6;
-    color: white;
-    font-weight: bold;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-/* Hover bouton */
-.addappro:hover {
-    background: #2563eb;
-    transform: translateY(-2px);
-}
-
-/* Responsive */
-@media(max-width: 768px){
-    .appro {
-        margin-left: 80px;
-    }
-
-    .card_add {
-        flex-direction: column;
-        gap: 10px;
-    }
-
-    .texte {
-        width: 100%;
-    }
-
-    .addappro {
-        width: 100%;
-    }
-}
-/* Table globale */
-table {
-    width: 98.5%;
-    table-layout: fixed;
-    border-collapse: collapse;
-    background: white;
-    border-radius: 15px;
-    overflow: hidden;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-    margin-top: 20px;
-    margin: 12px 10px;
-}
-
-thead th:nth-child(1) { width: 40%; } /* Fournisseur */
-
-/* Header */
-thead {
-    background: #3b82f6;
-    color: white;
-}
-
-thead th {
-    padding: 15px;
-    text-align: left;
-    font-weight: 600;
-}
-
-/* Lignes */
-tbody tr {
-    border-bottom: 1px solid #e2e8f0;
-    transition: 0.3s;
-}
-
-/* Cellules */
-tbody td {
-    padding: 12px 15px;
-    color: #1e293b;
-}
-
-/* Hover ligne */
-tbody tr:hover {
-    background: #f1f5f9;
-}
-
-/* Dernière ligne sans bordure */
-tbody tr:last-child {
-    border-bottom: none;
-}
-
-/* Bouton action (si tu ajoutes des boutons plus tard) */
-td button {
-    padding: 6px 12px;
-    border: none;
-    border-radius: 8px;
-    background: #3b82f6;
-    color: white;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-td button:hover {
-    background: #2563eb;
-}
-
-/* Responsive */
-@media(max-width: 768px){
-    table {
-        font-size: 12px;
-    }
-
-    thead {
-        display: none;
-    }
-
-    table, tbody, tr, td {
-        display: block;
-        width: 100%;
-    }
-
-    tr {
-        margin-bottom: 10px;
-        background: white;
-        border-radius: 10px;
-        padding: 10px;
-    }
-
-    td {
-        text-align: right;
-        position: relative;
-        padding-left: 50%;
-    }
-
-    td::before {
-        content: attr(data-label);
-        position: absolute;
-        left: 10px;
-        font-weight: bold;
-        color: #64748b;
-    }
-}
-/* RESET */
+/* =========================
+   RESET
+========================= */
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family: Arial, sans-serif;
-}
-.formAppro{
-    display:block;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    display: none;
-}   
-.formAppro .show{
-    display: block;
-}
-form{
-    background:#fff;
-    padding:25px;
-    border-radius:12px;
-    width:420px;
-    box-shadow:0 10px 25px rgba(0, 0, 0, 0.575);
-    position: absolute;
-    top: 20%;
-    left: 50%;
-    transform: translateX(-50%);
+    font-family:Arial, sans-serif;
 }
 
-h2{
-    text-align:center;
-    margin-bottom:20px;
+/* =========================
+   SECTION PRINCIPALE
+========================= */
+.appro{
+    margin-left:250px;
+    width:calc(100% - 250px);
+    padding:20px;
+    min-height:100vh;
+    background:#f5f7fb;
 }
 
-select, input{
-    width:100%;
-    padding:10px;
-    margin-top:8px;
-    border-radius:8px;
-    border:1px solid #ccc;
+/* =========================
+   CARD HEADER
+========================= */
+.card_add{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:15px;
+    background:white;
+    padding:18px;
+    border-radius:15px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.05);
+}
+
+/* INPUT SEARCH */
+.texte{
+    width:280px;
+    padding:12px 15px;
+    border:none;
+    border-radius:30px;
+    background:#f1f5f9;
+    outline:none;
+    transition:0.3s;
+    font-size:14px;
+}
+
+.texte:focus{
+    background:#e2e8f0;
+    box-shadow:0 0 0 3px rgba(59,130,246,0.2);
+}
+
+/* BTN AJOUT */
+.addappro{
+    padding:12px 18px;
+    border:none;
+    border-radius:30px;
+    background:#3b82f6;
+    color:white;
+    font-weight:bold;
+    cursor:pointer;
     transition:0.3s;
 }
 
-select:focus, input:focus{
-    border-color:#036179ab;
-    outline:none;
+.addappro:hover{
+    background:#2563eb;
+    transform:translateY(-2px);
 }
+
+/* =========================
+   POPUP
+========================= */
+.formAppro{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.5);
+    display:none;
+    justify-content:center;
+    align-items:center;
+    z-index:1000;
+}
+
+/* FORM */
+form{
+    width:450px;
+    background:white;
+    padding:25px;
+    border-radius:15px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.25);
+    position:relative;
+    animation:popup 0.3s ease;
+    z-index: 100;
+}
+
+/* ANIMATION */
+@keyframes popup{
+    from{
+        transform:scale(0.9);
+        opacity:0;
+    }
+    to{
+        transform:scale(1);
+        opacity:1;
+    }
+}
+
+/* BTN CLOSE */
+.supp{
+    position:absolute;
+    top:15px;
+    right:15px;
+    background:red;
+    color:white;
+    padding:6px 10px;
+    border-radius:8px;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.supp:hover{
+    background:#cc0000;
+}
+
+/* TITLE */
+h2{
+    text-align:center;
+    margin-bottom:20px;
+    color:#0f172a;
+}
+
+/* LABEL */
+label{
+    font-weight:600;
+    color:#334155;
+}
+
+/* INPUT + SELECT */
+select,
+input{
+    width:100%;
+    padding:12px;
+    margin-top:8px;
+    border:1px solid #dbeafe;
+    border-radius:10px;
+    outline:none;
+    transition:0.3s;
+    background:#f8fafc;
+}
+
+select:focus,
+input:focus{
+    border-color:#3b82f6;
+    box-shadow:0 0 0 3px rgba(59,130,246,0.2);
+}
+
+/* PRODUITS */
 .ligne{
     display:flex;
     gap:10px;
-    margin-top:10px;
+    margin-top:12px;
+    align-items:center;
+}
+
+.ligne select{
+    flex:2;
 }
 
 .ligne input{
-    width:100px;
+    flex:1;
 }
 
-/* BUTTON DELETE */
+/* BTN DELETE */
 .supprimer{
-    background:#ff4d4d;
+    background:#ef4444;
     color:white;
     border:none;
-    padding:8px;
+    padding:10px 12px;
     border-radius:8px;
     cursor:pointer;
     transition:0.3s;
 }
 
 .supprimer:hover{
-    background:#cc0000;
+    background:#dc2626;
 }
 
-/* ADD BUTTON */
+/* BTN ADD */
 .add-btn{
-    margin-top:10px;
-    background:#021b6e;
-    color:white;
-    border:none;
-    padding:10px;
     width:100%;
-    border-radius:8px;
-    cursor:pointer;
-}
-
-.add-btn:hover{
-    background:#021b6e;
-}
-
-/* SUBMIT */
-.submit-btn{
     margin-top:15px;
-    background:#010f1bd2;
-    color:white;
-    border:none;
     padding:12px;
-    width:100%;
-    border-radius:8px;
-    cursor:pointer;
-}
-
-.submit-btn:hover{
-    background:#010f1bd2;
-}
-.supp{
-    float: right;
-      background:#ff4d4d;
-    color:white;
     border:none;
-    padding:8px;
-    border-radius:8px;
+    border-radius:10px;
+    background:#1d4ed8;
+    color:white;
+    font-weight:bold;
     cursor:pointer;
     transition:0.3s;
 }
-.supAppro{
-    display: flex;
-    align-items: center;
-    gap:10px;
-}
- .btn-mod {
-  background:green; 
-  padding: 5px 10px; 
-   border-radius:5px;
-  color:white;
-  text-decoration: none;
+
+.add-btn:hover{
+    background:#1e40af;
 }
 
- .btn-annuler {
-  background:red; 
-  padding:5px 10px ; 
-   border-radius:5px;
-  color:white;
-  text-decoration: none;
-} 
+/* BTN SUBMIT */
+.submit-btn{
+    width:100%;
+    margin-top:15px;
+    padding:12px;
+    border:none;
+    border-radius:10px;
+    background:#0f172a;
+    color:white;
+    font-weight:bold;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.submit-btn:hover{
+    background:#020617;
+}
+
+/* =========================
+   TABLE
+========================= */
+table{
+    width:100%;
+    border-collapse:collapse;
+    background:white;
+    border-radius:15px;
+    overflow:hidden;
+    margin-top:20px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.05);
+    z-index: -100;
+}
+
+/* HEADER */
+thead{
+    background:#3b82f6;
+    color:white;
+}
+
+thead th{
+    padding:15px;
+    text-align:left;
+    font-weight:600;
+}
+
+/* BODY */
+tbody tr{
+    border-bottom:1px solid #e2e8f0;
+    transition:0.3s;
+}
+
+tbody tr:hover{
+    background:#f8fafc;
+}
+
+tbody td{
+    padding:15px;
+    color:#334155;
+}
+
+/* ACTIONS */
+.supAppro{
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+/* BTN MODIFIER */
+.btn-mod{
+    background:green;
+    color:white;
+    text-decoration:none;
+    padding:7px 12px;
+    border-radius:8px;
+    transition:0.3s;
+}
+
+.btn-mod:hover{
+    background:#15803d;
+}
+
+/* BTN DELETE */
+.btn-annuler{
+    background:red;
+    color:white;
+    text-decoration:none;
+    padding:7px 12px;
+    border-radius:8px;
+    transition:0.3s;
+}
+
+.btn-annuler:hover{
+    background:#dc2626;
+}
+
+/* =========================
+   TABLET
+========================= */
+@media(max-width:900px){
+
+    .appro{
+        margin-left:90px;
+        width:calc(100% - 90px);
+        padding:15px;
+    }
+
+    .card_add{
+        flex-direction:column;
+        align-items:stretch;
+    }
+
+    .texte{
+        width:100%;
+    }
+
+    .addappro{
+        width:100%;
+    }
+
+    table{
+        display:block;
+        overflow-x:auto;
+        white-space:nowrap;
+        z-index: -10;
+    }
+
+    form{
+        margin-top: 55px;
+        width:90%;
+        max-height:90vh;
+        overflow-y:auto;
+        z-index: 100;
+        left: 1%;
+    }
+}
+
+/* =========================
+   MOBILE
+========================= */
+@media(max-width:600px){
+
+    .appro{
+        margin-left:0;
+        width:100%;
+        padding:10px;
+    }
+
+    .card_add{
+        flex-direction:column;
+        gap:12px;
+        padding:15px;
+    }
+
+    .texte{
+        width:100%;
+        font-size:13px;
+    }
+
+    .addappro{
+        width:100%;
+    }
+
+    table{
+        display:block;
+        overflow-x:auto;
+        white-space:nowrap;
+         z-index: -10;
+    }
+
+    thead th,
+    tbody td{
+        padding:10px;
+        font-size:13px;
+    }
+
+    .supAppro{
+        flex-wrap:wrap;
+        justify-content:center;
+    }
+
+    form{
+        margin-top: 55px;
+        width:100%;
+        padding:18px;
+        max-height:90vh;
+        overflow-y:auto;
+        z-index: 100;
+        left: 0;
+    }
+
+    .ligne{
+        flex-direction:column;
+    }
+
+    .ligne input,
+    .ligne select,
+    .supprimer{
+        width:100%;
+    }
+
+    h2{
+        font-size:20px;
+    }
+
+    .supp{
+        font-size:14px;
+        padding:5px 9px;
+    }
+}

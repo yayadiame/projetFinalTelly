@@ -150,7 +150,7 @@ session_start();
             ?>
         </p>
          <?php endif; ?>
-        <form action="../traitement/traite.php" method="POST">
+        <form action="../projetFinalphp/traitement/traite.php" method="POST">
             <div class="inputBox">
                 <input type="email" name="email" placeholder="votre email">
                 <label>Email</label>

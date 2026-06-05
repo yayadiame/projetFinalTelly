@@ -297,3 +297,86 @@ select:focus {
   color:white;
   text-decoration: none;
 } 
+@media(max-width:900px){
+
+    /* CONTAINER PRINCIPAL */
+    .card-produit{
+        margin-left: 0;
+        width: 100%;
+        padding: 10px;
+    }
+
+    /* HEADER */
+    .dashboard-header{
+        flex-direction: column;
+        gap: 15px;
+        align-items: stretch;
+    }
+
+    .search-box input{
+        width: 100%;
+    }
+
+    .actions{
+        flex-direction: column;
+        width: 100%;
+        gap: 10px;
+    }
+
+    .btn,
+    .addCategorie,
+    .addProduit{
+        width: 100%;
+        justify-content: center;
+    }
+
+    /* FORM MODAL CATEGORIE */
+    .content{
+        width: 90%;
+        left: 5%;
+        top: 20%;
+    }
+
+    /* FORM MODAL PRODUIT */
+    .formeProduit form{
+        width: 90%;
+        left: 5%;
+        top: 10%;
+        height: auto;
+    }
+
+    /* INPUTS */
+    input,
+    select{
+        width: 100%;
+    }
+
+    /* CARDS PRODUITS */
+    .cards{
+        justify-content: center;
+        margin-left: 0;
+    }
+
+    .card{
+        width: 100%;
+        max-width: 320px;
+    }
+
+    .avatar{
+        width: 100%;
+        height: 200px;
+    }
+
+    /* ACTION BUTTONS CARD */
+    .actions{
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .btn-mod,
+    .btn-annuler{
+        width: 100%;
+        text-align: center;
+    }
+
+}
